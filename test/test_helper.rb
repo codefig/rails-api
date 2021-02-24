@@ -6,12 +6,14 @@ require 'minitest/unit'
 require 'minitest/mock'
 require 'minitest/autorun'
 require 'webmock/minitest'
+require "rack/test"
 
 module ActiveSupport
 
   
   class TestCase
-    include FactoryBot::Syntax::Methods
+    include Rack::Test::Methods
+    # include ::FactoryBot::Syntax::Methods
     # Run tests in parallel with specified workers
     parallelize(workers: :number_of_processors)
   
