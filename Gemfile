@@ -42,7 +42,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "mocha"
 gem "webmock"
 gem 'rack-test', group: :test
-
-# group :development, :test do
-#   gem 'factory_bot_rails'
-# end
+gem "factory_bot_rails"
+# gem 'jsonapi-rails'
+gem 'active_model_serializers', '~> 0.10.6'
+gem 'kaminari'

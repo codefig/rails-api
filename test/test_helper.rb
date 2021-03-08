@@ -13,6 +13,8 @@ module ActiveSupport
   
   class TestCase
     include Rack::Test::Methods
+    FactoryBot.reload
+    include FactoryBot::Syntax::Methods
     # include ::FactoryBot::Syntax::Methods
     # Run tests in parallel with specified workers
     parallelize(workers: :number_of_processors)

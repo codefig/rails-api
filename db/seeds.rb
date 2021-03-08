@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+include FactoryBot::Syntax::Methods
+FactoryBot.define do
+  factory :article do |number|
+
+    sequence(:title) {|number| "The title is #{number}"}
+    sequence(:content) {|number| "The content number is #{number}"}
+    sequence(:slug) {|number| "slug-hacker-#{number}"}
+  end
+end
+
+create_list(:article, 10)
