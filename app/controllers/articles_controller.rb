@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
     def index
-        articles = Article.page(params[:page]).per(2)
+        articles = Article.page(params[:page]).per(params[:per_page])
         puts(Article.count)
         render json: articles
     end

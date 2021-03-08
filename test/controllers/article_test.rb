@@ -26,15 +26,15 @@ class ArticleSomethingTest < ActionDispatch::IntegrationTest
         data = json_data
        
         assert_response :success
-        assert_equal(count+2, data.length)
+        assert_equal(count, data.length)
     end
 
-    test "should paginate article result s" do 
+    test "should paginate article result" do 
         create_list(:article, 6)
 
-        get ":index", params: {page: 2, per_page: 2}
+        get "/articles", params: {page: 2}
         assert_response :success
         pp('Fsys : ' + json_data.inspect)
-        assert_equal(json_data.length, 1)
+        assert_equal(json_data.length, 3)
     end
 end
